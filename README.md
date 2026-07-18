@@ -25,14 +25,14 @@ standards before using them as real guardrails.
 ## Run all tests
 
 ```bash
-opa test devsecops/ -v
+opa test . -v --ignore examples
 ```
 
 ## Evaluate a single policy against an example input
 
 ```bash
-opa eval -d devsecops/aws/policy.rego -i devsecops/aws/examples/violating.json 'data.aws.security.deny'
-opa eval -d devsecops/aws/policy.rego -i devsecops/aws/examples/compliant.json 'data.aws.security.deny'
+opa eval -d aws/policy.rego -i aws/examples/violating.json 'data.aws.security.deny'
+opa eval -d aws/policy.rego -i aws/examples/compliant.json 'data.aws.security.deny'
 ```
 
 Swap `aws` for `azure`, `gcp`, `kubernetes`, or `databricks` to try the other platforms.
@@ -43,7 +43,7 @@ These policies also work unmodified with [Conftest](https://www.conftest.dev/), 
 convenient for CI:
 
 ```bash
-conftest test --policy devsecops/kubernetes deployment.yaml
+conftest test --policy kubernetes deployment.yaml
 ```
 
 ## Wiring into CI / gatekeeping
