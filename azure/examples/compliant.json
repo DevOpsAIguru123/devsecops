@@ -1,0 +1,19 @@
+{
+  "resources": [
+    {
+      "type": "azurerm_storage_account",
+      "name": "sademo",
+      "values": { "allow_nested_items_to_be_public": false }
+    },
+    {
+      "type": "azurerm_network_security_rule",
+      "name": "allow-rdp",
+      "values": {
+        "direction": "Inbound",
+        "access": "Allow",
+        "source_address_prefix": "10.0.0.0/16",
+        "destination_port_range": "3389"
+      }
+    }
+  ]
+}

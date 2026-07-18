@@ -1,0 +1,18 @@
+{
+  "resources": [
+    {
+      "type": "aws_s3_bucket",
+      "name": "logs",
+      "values": { "acl": "private" }
+    },
+    {
+      "type": "aws_security_group",
+      "name": "default",
+      "values": {
+        "ingress": [
+          { "cidr_blocks": ["10.0.0.0/16"], "from_port": 22 }
+        ]
+      }
+    }
+  ]
+}

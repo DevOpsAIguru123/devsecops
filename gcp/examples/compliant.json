@@ -1,0 +1,18 @@
+{
+  "resources": [
+    {
+      "type": "google_storage_bucket_iam_binding",
+      "name": "assets",
+      "values": { "members": ["group:data-team@example.com"] }
+    },
+    {
+      "type": "google_compute_firewall",
+      "name": "allow-ssh",
+      "values": {
+        "direction": "INGRESS",
+        "source_ranges": ["10.0.0.0/16"],
+        "allow": [{ "ports": ["22"] }]
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "spec": {
+    "containers": [
+      {
+        "name": "app",
+        "securityContext": { "privileged": false, "runAsNonRoot": true },
+        "resources": {
+          "limits": { "cpu": "500m", "memory": "256Mi" }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "resources": [
+    {
+      "type": "databricks_cluster",
+      "name": "etl",
+      "values": {
+        "autotermination_minutes": 0,
+        "node_type_id": "r5.24xlarge",
+        "custom_tags": { "environment": "prod" },
+        "data_security_mode": "NONE"
+      }
+    }
+  ]
+}
